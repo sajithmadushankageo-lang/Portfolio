@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sajith Madushanka | Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🌊 HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #06243a, #0a4d68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.typing-text {
+  font-size: 22px;
+  color: #9be7ff;
+  border-right: 2px solid #00e5ff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 30px;
+}
+
+.sub {
+  margin-top: 10px;
+  color: #cbd5e1;
+}
+
+/* NAV */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00e5ff;
+}
+
+/* 🌊 WAVES */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 200px;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  opacity: 0.4;
+}
+
+.wave1 {
+  background: url("https://svgshare.com/i/uVh.svg");
+  animation: waveMove 8s linear infinite;
+  opacity: 0.6;
+}
+
+.wave2 {
+  background: url("https://svgshare.com/i/uVh.svg");
+  animation: waveMove 12s linear infinite;
+  opacity: 0.4;
+}
+
+.wave3 {
+  background: url("https://svgshare.com/i/uVh.svg");
+  animation: waveMove 18s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* 📡 SONAR EFFECT */
+.sonar-wrapper {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.sonar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, transparent 70%);
+}
+
+.sonar::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(0,229,255,0.4),
+    transparent
+  );
+  top: 25%;
+  left: 25%;
+  border-radius: 50%;
+  animation: rotateSonar 4s linear infinite;
+}
+
+.sonar::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #00e5ff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #00e5ff;
+  animation: pulse 1.5s infinite;
+}
+
+.sonar-ring {
+  position: absolute;
+  border: 1px solid rgba(0,229,255,0.3);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.r1 { width: 150px; height: 150px; }
+.r2 { width: 300px; height: 300px; }
+.r3 { width: 450px; height: 450px; }
+
+@keyframes rotateSonar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+/* SECTIONS */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  border-left: 5px solid #00adb5;
+  padding-left: 10px;
+  color: #1e2a38;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.about img {
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid #00adb5;
+}
+
+/* SKILLS */
+.skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  list-style: none;
+}
+
+.skills li {
+  background: #fff;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* PROJECTS */
+.project {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background: #00adb5;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  padding-left: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background: #1e2a38;
+  border: 3px solid #00adb5;
+  border-radius: 50%;
+}
+
+/* CONTACT */
+.contact a {
+  display: block;
+  margin-bottom: 10px;
+  color: #00adb5;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #1e2a38;
+  color: #fff;
+  padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 34px; }
+  .sonar-wrapper { width: 300px; height: 300px; }
+  .about { flex-direction: column; text-align: center; }
+}
+/* 📸 PROJECT IMAGE GALLERY (3 IN ONE ROW FIX) */
+.project-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap; /* important for responsiveness */
+}
+
+.project-images img {
+  width: calc(33.33% - 10px); /* 👈 makes 3 equal images in one row */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .project-images img {
+    width: 100%; /* stack on mobile */
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌊 HERO -->
+<header class="hero">
+
+  <!-- WAVES -->
+  <div class="wave-container">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+  </div>
+
+  <!-- SONAR -->
+  <div class="sonar-wrapper">
+    <div class="sonar"></div>
+    <div class="sonar-ring r1"></div>
+    <div class="sonar-ring r2"></div>
+    <div class="sonar-ring r3"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <h1>Sajith Madushanka</h1>
+
+    <div class="typing-text"></div>
+
+    <p class="sub">(Cat-B / RICS / FIG / IHO / ICA / AMSISL)</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#KeyTeqnicalSkills">Skills</a>
+      <a href="#SoftwareSkills">Software</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+</header>
+
+<div class="container">
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <img src="images/Myphoto.jpg" alt="Profile Photo">
+    <p>
+  Results-driven Hydrographic Survey Engineer with over 6 years of experience in offshore, port       construction, dredging and marine geophysical surveys across Saudi Arabia and Sri Lanka. Experienced in MBES, SBES, Side Scan Sonar, Sub-Bottom Profiling, GNSS positioning and barge positioning supporting subsea installation and marine construction projects. Skilled in survey mobilization, data acquisition, QA/QC, Data processing, and hydrographic reporting according to IHO standards.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="KeyTeqnicalSkills">
+  <h2>Key Technical Skills</h2>
+  <div class="skills">
+    <ul>
+      <li>Multibeam & Single Beam Surveys</li>
+      <li>Side Scan Sonar & Sub-bottom Profiling</li>
+      <li>Offshore GNSS Positioning & Barge Positioning</li>
+      <li>Tide Gauge Installation & Tidal Observations</li>
+      <li>Survey Instrument Mobilization & Calibration</li>
+      <li>Hydrographic Data Processing & QA/QC</li>
+      <li>Technical Reporting & Client Deliverables</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section id="SoftwareSkills">
+  <h2>Software Skills</h2>
+  <div class="skills">
+    <ul>
+      <li>HYPACK / HYSWEEP</li>
+      <li>QINSy</li>
+      <li>PDS</li>
+      <li>ArcGIS</li>
+      <li>AutoCAD / Civil 3D</li>
+      <li>SonarWiz</li>
+      <li>POS MV</li>
+      <li>Microsoft Office</li>
+      <li>TOTIS</li>
+      <li>BeamworX</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="timeline">
+
+    <!-- MSc -->
+    <div class="timeline-item">
+      <h3>MSc in Surveying Sciences - (2025 – Present | Ongoing)</h3>
+            <p>
+        Sabaragamuwa University of Sri Lanka<br>
+        Specialized in advanced geospatial science, hydrographic surveying, marine data analysis, and spatial data modeling.<br>
+        Focus areas include: hydrographic data processing, GIS applications, remote sensing, and marine surveying technologies.
+      </p>
+    </div>
+
+    <!-- BSc -->
+    <div class="timeline-item">
+      <h3>BSc (Hons) in Surveying Sciences – Hydrographic Surveying (Cat-B / RICS / FIG / IHO / ICA )</h3>
+      <span>Graduated | Second Class Upper Division (GPA 3.35/4.0)</span>
+      <p>
+        Sabaragamuwa University of Sri Lanka<br>
+        Comprehensive training in hydrographic surveying, offshore positioning systems, bathymetric data acquisition, and marine construction surveys.<br>
+        Strong foundation in MBES, SBES, SSS, SBP, GNSS, and hydrographic data processing according to IHO standards.
+      </p>
+    </div>
+
+    <!-- Diploma -->
+    <div class="timeline-item">
+      <h3>Diploma in English Language</h3>
+      <span>Completed | Distinction</span>
+      <p>
+        British Way English Academy<br>
+        Developed professional communication, technical reporting, and academic writing skills for international marine and offshore projects.
+      </p>
+    </div>
+
+    <!-- Computer Literacy -->
+    <div class="timeline-item">
+      <h3>Certificate in Computer Literacy</h3>
+      <span>Completed</span>
+      <p>
+        Open University of Sri Lanka<br>
+        Training in Microsoft Office Suite, data handling, and fundamental IT skills supporting survey data processing and reporting.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS / PROFESSIONAL EXPERIENCE -->
+<section id="projects">
+  <h2>Projects & Professional Experience</h2>
+
+  <!-- Unique Group -->
+  <div class="project">
+    <h3>Hydrographic Survey Engineer – Unique Group, Saudi Arabia</h3>
+    <p>
+      <strong>Feb 2025 – Present</strong><br><br>
+ 
+      Leading offshore hydrographic and geophysical survey operations supporting marine construction, subsea engineering, and offshore positioning systems.<br><br>
+ <!-- 👇 ADD IMAGES HERE -->
+<div class="project-images">
+  <img src="images/Jeddah.jpg" alt="Jeddah Port Survey">
+  <img src="images/process.jpg" alt="Survey Vessel">
+  <img src="images/process1.jpg" alt="Multibeam Survey Data">
+</div><br><br>
+      ✔ Executed Multibeam (MBES) and Single Beam (SBES) surveys for high-resolution bathymetric mapping.<br>
+      ✔ Conducted geophysical surveys using Side Scan Sonar (SSS) for seabed investigation and feature detection.<br>
+      ✔ Managed installation and monitoring of radar tide gauges across Red Sea and Arabian Gulf projects.<br>
+      ✔ Performed survey mobilization, calibration, troubleshooting, and maintenance of hydrographic instruments.<br>
+      ✔ Led data acquisition, processing, QA/QC, and final deliverables using HYPACK and PDS software.<br>
+      ✔ Ensured compliance with IHO S-44 standards and client specifications.<br>
+      ✔ Delivered key projects including Jeddah Islamic Port, Yanbu Commercial Port, and Dammam offshore surveys.<br>
+      ✔ Coordinated with clients and offshore teams to achieve accurate and timely project execution.
+    </p>
+  </div>
+
+  <!-- CHEC -->
+  <div class="project">
+    <h3>Hydrographic & Land Surveyor – China Harbour Engineering Company (CHEC), Sri Lanka</h3>
+    <p>
+      <strong>May 2023 – Jan 2025</strong><br><br>
+
+      Worked as Chief Hydrographic Surveyor on large-scale port construction projects, including the East Container Terminal, Colombo Harbour.<br><br>
+ <!-- 👇 ADD IMAGES HERE -->
+<div class="project-images">
+  <img src="images/CH1.jpg" alt="Jeddah Port Survey">
+  <img src="images/CH2.jpg" alt="Survey Vessel">
+  <img src="images/CH3.jpg" alt="Multibeam Survey Data">
+</div><br><br>
+
+      ✔ Conducted bathymetric, topographic, and construction surveys for marine infrastructure development.<br>
+      ✔ Performed pre-dredge, post-dredge, and progress surveys with volume computations for billing.<br>
+      ✔ Led survey team operations and coordinated field activities.<br>
+      ✔ Installed tide gauges and performed tidal data analysis.<br>
+      ✔ Executed QA/QC procedures ensuring high data accuracy and reliability.<br>
+      ✔ Processed hydrographic data using HYPACK and prepared detailed technical reports.<br>
+      ✔ Supported breakwater construction, quay wall alignment, and reclamation surveys.
+    </p>
+  </div>
+
+  <!-- GLOBAL GIS (Recent) -->
+  <div class="project">
+    <h3>Hydrographic Surveyor – GLOBAL GIS (PVT) LTD, Sri Lanka</h3>
+    <p>
+      <strong>Aug 2022 – Apr 2023</strong><br><br>
+
+      Contributed to major dredging and port development projects including Hambantota International Harbour.<br><br>
+
+      ✔ Conducted offshore and onshore bathymetric surveys for navigational channel clearance.<br>
+      ✔ Performed Single Beam surveys for dredging monitoring (pre and post dredge).<br>
+      ✔ Utilized Side Scan Sonar for seabed visualization and obstruction detection.<br>
+      ✔ Carried out volume calculations for dredging verification and billing.<br>
+      ✔ Established GNSS control points and installed tide gauges.<br>
+      ✔ Performed QA/QC and prepared hydrographic reports.
+    </p>
+  </div>
+
+  <!-- National Hydrographic Office -->
+  <div class="project">
+    <h3>Hydrographic Surveyor – National Hydrographic Office, Sri Lanka</h3>
+    <p>
+      <strong>Mar 2022 – Jun 2022</strong><br><br>
+
+      Supported national-level hydrographic and offshore survey projects in collaboration with government agencies and the Navy.<br><br>
+ <!-- 👇 ADD IMAGES HERE -->
+<div class="project-images">
+  <img src="images/N1.jpg" alt="Jeddah Port Survey">
+  <img src="images/N2.jpg" alt="Survey Vessel">
+</div><br><br>
+
+      ✔ Conducted bathymetric surveys for coastal and offshore environments.<br>
+      ✔ Performed Side Scan Sonar surveys for debris and shipwreck investigations.<br>
+      ✔ Executed Sub-Bottom Profiler (SBP) surveys for subsea classification.<br>
+      ✔ Carried out beach profiling and shoreline monitoring.<br>
+      ✔ Performed GNSS static observations for precise positioning.<br>
+      ✔ Conducted tidal observations and data analysis.<br>
+      ✔ Prepared hydrographic data reports and technical documentation.
+    </p>
+  </div>
+
+  <!-- GLOBAL GIS (Earlier Experience) -->
+  <div class="project">
+    <h3>Hydrographic Surveyor – GLOBAL GIS (PVT) LTD, Sri Lanka</h3>
+    <p>
+      <strong>Mar 2019 – Jan 2022</strong><br><br>
+
+      Delivered hydrographic and geospatial survey solutions for irrigation, coastal, and environmental projects.<br><br>
+
+ <!-- 👇 ADD IMAGES HERE -->
+<div class="project-images">
+  <img src="images/J1.jpg" alt="Jeddah Port Survey">
+ <img src="images/J2.jpg" alt="Jeddah Port Survey">
+</div><br><br>
+
+      ✔ Conducted bathymetric surveys for reservoirs, irrigation systems, and coastal zones.<br>
+      ✔ Computed sedimentation volumes using Single Beam Echo Sounder data.<br>
+      ✔ Performed Side Scan Sonar and Sub-Bottom Profiler surveys for seabed analysis.<br>
+      ✔ Installed and monitored tide gauges for accurate water level measurements.<br>
+      ✔ Processed hydrographic data using HYPACK and ensured QA/QC compliance.<br>
+      ✔ Produced bathymetric charts and seabed mapping outputs for engineering applications.
+    </p>
+  </div>
+
+</section>
+<!-- PROFESSIONAL QUALIFICATIONS -->
+<section id="qualifications">
+  <h2>Professional Qualifications</h2>
+
+  <div class="qualifications">
+    <ul>
+      <li>
+        <strong>Associate Member</strong> – Surveyor’s Institute of Sri Lanka (SISL) 
+        <br>Membership No: 353
+      </li>
+
+      <li>
+        <strong>BOSIET with EBS</strong> 
+        <br>Valid until: May 2029
+      </li>
+
+      <li>
+        <strong>H2S & SCBA Certification</strong> 
+        <br>Valid until: December 2027
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="contact">
+    <p>
+      📧 <strong>Email:</strong> 
+      <a href="mailto:sajithmadushankageo@gmail.com">
+        sajithmadushankageo@gmail.com
+      </a>
+    </p>
+
+    <p>
+      📞 <strong>Phone:</strong> 
+      <a href="tel:+966569852850">
+        +966 56 985 2850
+      </a>
+    </p>
+
+    <p>
+      🔗 <strong>LinkedIn:</strong> 
+      <a href="https://www.linkedin.com/in/sajith-madushanka-00b6862b6" target="_blank">
+        linkedin.com/in/sajith-madushanka
+      </a>
+    </p>
+  </div>
+</section>
+</div>
+
+<footer>
+  <p>© 2026 Sajith Madushanka</p>
+</footer>
+
+<!-- TYPING -->
+<script>
+const text = "Hydrographic Survey Engineer | Offshore Surveyor | Geomatics Engineer";
+let index = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const el = document.querySelector(".typing-text");
+  if (!el) return;
+
+  if (!isDeleting) {
+    el.textContent = text.substring(0, index + 1);
+    index++;
+
+    if (index === text.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500);
+      return;
+    }
+  } else {
+    el.textContent = text.substring(0, index - 1);
+    index--;
+
+    if (index === 0) {
+      isDeleting = false;
+    }
+  }
+
+  setTimeout(typeEffect, isDeleting ? 40 : 80);
+}
+
+typeEffect();
+</script>
+
+</body>
+</html>
